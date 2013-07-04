@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Login to DM Ex Machina{% endblock %}
+{% block content %}
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% if messages %}
+<aside id="messages">
+    <ul>
+        {% for category, message in messages %}
+        <li class="{{ category }} message">{{ message }}</li>
+        {% endfor %}
+    </ul>
+</aside>
+{% endif %}
+{% endwith %}
+<form action="/signin" method="POST" id="signin-form">
+    <span class="form-item">
+        <label for="signin-player-id">Player ID</label>
+        <input type="text" name="pid" id="pid" autocomplete="off">
+    </span>
+    <span class="form-item">
+        <label for="signin-player-id">Password</label>
+        <input type="password" name="password" id="password" autocomplete="off">
+    </span>
+    <button type="submit">Login</button>
+</form>
+{% endblock %}

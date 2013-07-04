@@ -1,0 +1,208 @@
+body {
+    background-color: #111;
+    color: #fff;
+}
+
+#page-top {
+    margin: 0;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: block;
+    height: 40px;
+    background-color: #333;
+    border-top: 3px solid #7a7;
+    font-size: 12pt;
+    line-height: 20px;
+}
+
+    #page-top ul li {
+        float: left;
+    }
+
+        #page-top ul li a {
+            text-decoration: none;
+            display: block;
+            padding: 10px;
+            height: 20px;
+            line-height: 20px;
+            color: #fff;
+            font-weight: bold;
+        }
+
+            #page-top ul li a:hover {
+                background-color: #444;
+            }
+
+        #page-top ul li.sign-out {
+            float: right;
+        }
+
+#signin-form {
+    width: 400px;
+    margin: 0 auto;
+}
+
+.form-item {
+    display: block;
+    padding: 20px;
+    color: #aaa;
+}
+
+    .form-item label {
+        display: block;
+        color: #fff;
+        font-weight: bold;
+        font-size: 16pt;
+        margin: 5px 0;
+    }
+
+    .form-item input {
+        border: 1px solid #000;
+        padding: 5px;
+        text-align: center;
+    }
+
+    .form-item input, button {
+        font-size: 20px;
+        border-radius: 2px;
+    }
+
+button {
+    margin: 20px;
+}
+
+
+#sessions {
+    width: 650px;
+    margin: 0 auto;
+    margin-top: 25px;
+}
+
+    #sessions td {
+        padding: 5px;
+    }
+
+    #sessions thead {
+        font-size: 20pt;
+        font-weight: bold;
+        border-bottom: 1px solid #aaa;
+    }
+
+    #sessions .campaign-name {
+        width: 500px;
+        color: #fff;
+    }
+
+    #sessions .started {
+        color: #aaa;
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    #sessions .chapter-name {
+        font-size: 16pt;
+    }
+
+        #sessions a {
+            text-decoration: none;
+            color: #fff;
+            display: block;
+            width: 100%;
+        }
+
+    #sessions tbody tr:hover {
+        background-color: #555;
+        cursor: pointer;
+    }
+
+.ingame #post-text {
+    width: 500px;
+    height: 150px;
+}
+
+.chapter-post {
+    padding: 5px;
+    border-left: 4px solid #7a7;
+    margin: 10px;
+}
+
+    .dm-post {
+        border-color: #aaa;
+    }
+
+    .player-specific {
+        border-color: #a77;
+    }
+
+p {
+    line-height: 2em;
+    margin: 1em 0;
+}
+
+#messages {
+    width: 400px;
+    margin: 0 auto;
+}
+
+    #messages .message {
+        padding: 10px;
+        border: 1px solid #fff;
+        background-color: #999;
+        font-weight: bold;
+    }
+
+    #messages .error {
+        border-color: #a77;
+        background-color: #fee;
+        color: #a77;
+    }
+
+.ingame {
+    font-size: 14pt;
+    width: 66%;
+    overflow-y: auto;
+    height: 900px;
+    position: absolute;
+    top: 42px;
+}
+
+#post-chat {
+    width: 33%;
+    position: absolute;
+    right: 0;
+    top: 42px;
+    height: 700px;
+    overflow-y: auto;
+}
+
+        #post-chat .msg {
+            margin-bottom: 5px;
+        }
+
+            #post-chat .msg .source {
+                font-weight: bold;
+                border-bottom: 1px solid #000;
+            }
+
+    #post-chat input, button, form {
+        margin: 0;
+        padding: 0;
+        text-align: left;
+    }
+
+    #post-chat .activate {
+        text-decoration: none;
+        color: #fff;
+        font-weight: bold;
+    }
+
+a.bottom {
+    visibility: hidden;
+}
+
+p.chatdate {
+    float: right;
+    color: #aaa;
+}

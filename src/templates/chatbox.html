@@ -1,0 +1,21 @@
+{% if current_game %}
+<aside id="post-chat">
+    OOC Chat
+    <div class="chat-container">
+    <div class="chats">
+        {% if chats %}
+        {% for each in chats %}
+        <div class="msg">
+            <p class="chatdate">{{ localtime(each.posted).strftime('%Y-%m-%d %H:%M') }}</p>
+            <p class="source">{{ each.source }}</p>
+            {{ each.body|markdown }}
+        </div>
+        {% endfor %}
+        {% endif %}
+        <form action="/games/{{ game }}/chat" method="post">
+        <span class="form-item"><input type="text" name="post-text" id="post-text" autocomplete="off"><button type="submit">Post</button></span>
+        </form>
+    </div>
+    </div>
+</aside>
+{% endif %}

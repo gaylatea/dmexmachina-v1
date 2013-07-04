@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %}{{ chapter.name }}{% endblock %}
+{% block content %}
+<div class="ingame">
+<section id="chapter-posts">
+{% for post in posts %}
+{% if not post.players or session['pid'] in post.players or is_dm %}
+    <article id="{{ post._id }}" class="chapter-post {% if post.source == 'dm' %}dm-post{% endif %} {% if post.players %}player-specific{% endif %}">
+        {% if post.source != 'dm' %}<p><strong>{{ post.source }}</strong><br>{{ localtime(post.posted).strftime('%Y-%m-%d %H:%M')}}</p>{% endif %}
+        {{ post.body|markdown }}
+    </article>
+{% endif %}
+{% endfor %}
+</section>
+
+<a name="bottom" class="bottom">This is not visible.</a>
+{% if not chapter.locked %}
+<form action="{{ chapter._id }}/post" method="POST">
+    <span class="form-item">
+        <label for="post-text">Your post:</label>
+        <textarea id="post-text" name="post-text"></textarea></span>
+    {% if is_dm %}
+    <select name="players" multiple>
+        {% for each in chapter['players'] %}
+        <option value="{{ each }}">{{ each }}</option>
+        {% endfor %}
+    </select>
+    {% endif %}
+    <button type="submit">Post</button>
+</form>
+{% endif %}
+</div>
+{% include "chatbox.html" %}
+{% endblock %}

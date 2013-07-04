@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+{% for each in sessions %}
+<section id="sessions">
+    <table class="campaign">
+        <thead>
+            <td class="campaign-name"><a href="/games/{{ each._id }}">{{ each.name }} &raquo;</a></td>
+            <td class="started">{{ localtime(each.started).strftime('%b %Y') }}</td>
+        </thead>
+        {% for chapter in each.chapters %}
+        <tr>
+            <td class="chapter-name"><a href="/games/{{ each._id }}/chapter/{{ chapter._id }}#bottom">{{ chapter.name }}</a></td>
+            <td class="started">{{ localtime(chapter.started).strftime('%b %d %Y') }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</section>
+{% endfor %}
+{% include "chatbox.html" %}
+{% endblock %}
